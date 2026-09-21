@@ -212,6 +212,7 @@ function App() {
     <nav className="notebook-index" aria-label="Notebook index"><div className="index-title">FIELD NOTES <span>drag / keys / touch</span></div>{scenes.map((scene, index) => <button type="button" key={scene.id} className={index === sceneIndex ? 'selected' : ''} onClick={() => goToScene(index)}><span>{scene.number}</span>{scene.label}</button>)}</nav>
     {selectedProject && <ProjectInspector project={selectedProject} onClose={() => setSelectedProject(null)} />}
     </>}
+    {experienceMode === 'cv' && selectedProject && <ProjectInspector project={selectedProject} onClose={() => setSelectedProject(null)} />}
   </div>
 }
 
